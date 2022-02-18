@@ -1,8 +1,20 @@
-var getCursorPosition = require('./cursor-position');
+const util = require("util");
+const exec = util.promisify(require("child_process").exec);
 
-async function main() {
-  let pos = await getCursorPosition();
-  console.log('pos: ', pos);
-  console.log('pos.row: ', pos.row);
+async function execAsync(cmd) {
+  try {
+    const { stdout, stderr } = await exec(cmd);
+    return stdout;
+  } catch (e) {
+    console.error(e);
+  }
 }
-main();
+
+async function GetCursorPosition() {
+  let result = await execAsync('./cursor-position.sh');
+  return JSON.parse(result);
+};
+
+module.exports = function () {
+  return GetCursorPosition();
+};

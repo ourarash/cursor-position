@@ -1,5 +1,5 @@
 {
-  "name": "cursor-position",
+  "name": "cursor-pos",
   "version": "2.0.0",
   "description": "A bash-based package to get the current position in the terminal.",
   "main": "index.js",

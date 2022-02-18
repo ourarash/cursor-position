@@ -1,4 +1,4 @@
-# cursor-position
+# cursor-pos
 
 A bash-based package to get the current position in the terminal.
 
@@ -8,13 +8,13 @@ Will only work on systems that have bash.
 Install with npm:
 
 ```bash
-npm install cursor-position
+npm install cursor-pos
 ```
 
 # Usage
 
 ```javascript
-const getCursorPosition = require('./cursor-position');
+const getCursorPosition = require('./cursor-pos');
 
 async function main() {
   let pos = await getCursorPosition();
